@@ -5,7 +5,7 @@ router.get('/google', passport.authenticate('google', {
   scope: ['profile', 'https://www.googleapis.com/auth/photoslibrary.readonly']
 }));
 
-router.get('/redirect', (req,res) => {
+router.get('/redirect', passport.authenticate('google'), (req,res) => {
   res.send('Successfully logged in using google!');
 });
 
