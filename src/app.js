@@ -2,19 +2,23 @@
 
 const express = require('express');
 const ejs = require('ejs');
+const cookieSession = require('cookie-session');
 const passport = require('passport');
 const mongoose = require('mongoose');
-const cookieSession = require('cookie-session');
 
 // Routes
 const routes = require('./routes.js');
 const authRoutes = require('./routes/auth-routes.js');
 
-const app = express();
+// The following order must be followed
+// for OAuth login to work:
+// i) cookieParser
+// ii) session
+// iii) passport.initialize
+// iv) passport.session
+// v) app.router
 
-// set up routes
-routes(app);
-app.use('/auth', authRoutes);
+const app = express();
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -34,12 +38,16 @@ mongoose.connect(process.env.MONGODB_URL, {
 // Setup cookies
 app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 100, // cookie will expire after 1 day
-  key: [process.env.COOKIE_KEY]
+  keys: [process.env.COOKIE_KEY]
 }));
 
 // Initialize passport
 app.use(passport.initialize());
 app.use(passport.session());
+
+// set up routes
+routes(app);
+app.use('/auth', authRoutes);
 
 const altPort = 8080;
 const server = app.listen(process.env.PORT || altPort, () => {
