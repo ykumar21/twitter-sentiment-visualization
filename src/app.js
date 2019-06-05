@@ -19,8 +19,12 @@ app.set('view engine', 'ejs');
 const passportSetup = require('./config/passportSetup');
 
 // Connect to remote database
-mongoose.connect(process.env.MONGODB_URL, () => {
-  console.log('Connected to mongodb');
+mongoose.connect(process.env.MONGODB_URL, {
+  useNewUrlParser: true
+}).then(() => {
+  console.log('connected to mongoose db');
+}).catch((err) => {
+  console.log(err);
 });
 
 const altPort = 8080;
