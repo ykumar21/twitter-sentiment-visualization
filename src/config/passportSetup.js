@@ -15,21 +15,26 @@ passport.use(
 
     const googleId = profile.id;
 
-    User.findOne({id: googleId}).then((currUser) => {
-      if (currUser) {
-        console.log('user exists');
-        done(null, currUser);
+    User.findOne({googleId: googleId}, function(err, currUser) {
+      if (err) {
+        throw err;
       } else {
-        const user = new User({
-          username: profile.displayName,
-          googleId: profile.id
-        });
+        if (currUser) {
+          console.log('user already exists');
+          done(null, currUser);
+        } else {
+          const user = new User({
+            username: profile.displayName,
+            googleId: profile.id
+          });
 
-        user.save().then((newUser) => {
-          console.log('new user saved!');
-          done(null, newUser);
-        });
+          user.save().then((newUser) => {
+            console.log('new user saved');
+            done(null, newUser);
+          });
+        }
       }
+
     });
 
   })
