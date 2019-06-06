@@ -7,20 +7,15 @@
   <title>Document</title>
   <script>
     window.onload = function() {
-      let bt = document.getElementsByTagName('button');
+      let bt = document.getElementsByTagName('button')[0];
 
-      bt[1].addEventListener('click', function() {
+      bt.addEventListener('click', function() {
         window.location.href = '/auth/google';
-      });
-
-      bt[0].addEventListener('click', function() {
-        window.location.href = '/dashboard';
       });
     };
   </script>
 </head>
 <body>
-  <button>Continue to Guest</button> <br><br>
 <button>Login with Google+</button>
 </body>
 </html>
