@@ -1,43 +1,10 @@
-const Twit = require('Twit');
+const request = require('request');
 
 module.exports = function FetchTweets(options) {
+  async function fetchTokens(credentials) {
+    const consumerKey = crendentials.consumerKey;
+    const consumerSecret = credentials.consumerSecret;
 
-  const check = 0;
-  if (check == 1) {
-    const twit = new Twit({
-      consumer_key: process.env.TWITTER_CONSUMER_KEY,
-      consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-      access_token: process.env.TWITTER_ACCESS_TOKEN,
-      access_token_secret: process.env.TWITTER_ACCESS_SECRET
-    });
-
-    twit.get('search/tweets', {
-      q: options.query,
-      count: 0
-    }, function(err, data, response) {
-      if (err) {
-        console.log(err);
-      } else {
-        const tweetData = [];
-        let nullCounter = 0;
-
-        console.log(data.statuses.length);
-
-        for (let i = 0; i < data.statuses.length; i++) {
-          const location = data.statuses[i].user.location;
-          const tweetText = data.statuses[i].text;
-
-          if (location) {
-            tweetData.push({
-              text: tweetText,
-              location: location
-            });
-          } else {
-            nullCounter++;
-          }
-        }
-
-      }
-    });
+    const rawKey = consumerKey + ':' + consumerSecret;
   }
 };
