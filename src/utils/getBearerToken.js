@@ -12,8 +12,8 @@ module.exports = function getBearerToken(credentials, callback) {
     }
 
     try {
-      const consumerKey = encodeStr(credentials.consumerKey);
-      const consumerSecret = encodeStr(credentials.consumerSecret);
+      const consumerKey = encodeStr(credentials.consumer_key);
+      const consumerSecret = encodeStr(credentials.consumer_secret);
 
       const rawKey = consumerKey + ':' + consumerSecret;
 
