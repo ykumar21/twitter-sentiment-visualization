@@ -20,12 +20,35 @@ module.exports = function FetchTweets(options) {
 
     // Create headers for GET request
     let headers = {
-      'Authorization': 'Bearer ' + bearerToken
+      'Authorization': 'Bearer ' + bearerToken,
+      'Content-type': 'application/json'
     };
     reqOpts.headers = headers;
 
-    console.log(bearerToken);
-    console.log(reqOpts);
+    request.get({
+      url: 'https://api.twitter.com/1.1/search/tweets.json?q=%23BigPapi&count=100&tweet_mode=extended',
+      headers: reqOpts.headers
+    }, function (err, res, body) {
+      if (err) {
+        throw err;
+      } else {
+        let tweetData = JSON.parse(body);
+        let tweets = tweetData.statuses;
+        let data = [];
+
+        for (let i = 0; i < tweets.length; i++) {
+          if (tweets[i].user.location) {
+            data.push({
+              text: tweets[i].full_text,
+              location: tweets[i].user.location
+            });
+          }
+        }
+
+        console.log(data.length);
+      }
+
+    });
   })
   .catch((err) => {
     console.error(err);
