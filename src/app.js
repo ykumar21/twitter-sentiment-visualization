@@ -1,14 +1,14 @@
 // npm modules
 
-const express = require('express');
-const ejs = require('ejs');
-const cookieSession = require('cookie-session');
-const passport = require('passport');
-const mongoose = require('mongoose');
+import express from 'express';
+import ejs from 'ejs';
+import cookieSession from 'cookie-session';
+import passport from 'passport';
+import mongoose from 'mongoose';
 
 // Routes
-const routes = require('./routes.js');
-const authRoutes = require('./routes/auth-routes.js');
+import routes from './routes.js';
+import authRoutes from './routes/auth-routes.js';
 
 // The following order must be followed
 // for OAuth login to work:

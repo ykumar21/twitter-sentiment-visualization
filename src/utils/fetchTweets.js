@@ -1,5 +1,6 @@
-const request = require('request');
-const getBearerToken = require('./getBearerToken.js');
+import request from 'request';
+import getBearerToken from './getBearerToken';
+import getScore from './getScore';
 
 module.exports = function FetchTweets(options) {
   const credentials = {
@@ -26,7 +27,7 @@ module.exports = function FetchTweets(options) {
     reqOpts.headers = headers;
 
     request.get({
-      url: 'https://api.twitter.com/1.1/search/tweets.json?q=%23BigPapi&count=100&tweet_mode=extended',
+      url: 'https://api.twitter.com/1.1/search/tweets.json?q=%23trump&count=100&tweet_mode=extended',
       headers: reqOpts.headers
     }, function (err, res, body) {
       if (err) {
@@ -45,7 +46,7 @@ module.exports = function FetchTweets(options) {
           }
         }
 
-        console.log(data.length);
+        getScore(data);
       }
 
     });
