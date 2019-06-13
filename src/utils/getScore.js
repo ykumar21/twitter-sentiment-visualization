@@ -1,4 +1,6 @@
 import Sentiment from 'sentiment';
+import * as cities from '../public/data/cities'
+
 const sentiment = new Sentiment();
 
 module.exports = function(tweets) {
@@ -16,8 +18,16 @@ module.exports = function(tweets) {
       return false;
     }
   }
+  function extractLocations(array) {
+    for (let i = 0; i < array.length; i++) {
+      let location = array[i].location;
 
-  function getDistinctLocations(tweets) {
+      if (array.indexOf(',') == -1) {
+
+      }
+    }
+  }
+  function calculateScores(tweets) {
     let scores = [];
     for (let i = 0; i < tweets.length; i++) {
       if (checkExist(tweets[i].location, scores)) {
@@ -31,13 +41,13 @@ module.exports = function(tweets) {
       } else {
         scores.push({
           location: tweets[i].location,
-          score: sentiment.analyze(tweets[i].text).score`
+          score: sentiment.analyze(tweets[i].text).score
         });
       }
     }
 
-    return scores;
+    return extractLocations(scores);
   }
 
-  console.log(getDistinctLocations(tweets));
-}
+  console.log(calculateScores(tweets));
+};
