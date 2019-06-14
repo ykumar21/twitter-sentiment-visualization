@@ -1,5 +1,5 @@
 import Sentiment from 'sentiment';
-import * as cities from '../public/data/cities'
+import * as Locations from '../public/data/locations';
 
 const sentiment = new Sentiment();
 
@@ -39,16 +39,31 @@ module.exports = function(tweets) {
     }
 
     for (let i = 0; i < scores.length; i++) {
-      let location = scores[i].location;
-      console.log(i);
-      if (location.indexOf(',')) {
-        scores[i].location = (location.slice(location.indexOf(',') + 1, location.length)).trim();
+      let location = scores[i].location.toUpperCase();
 
+      // 1st level of extraction: USA States
+      // if state code or state name exists in the
+      // location text then replace the location by the state
+      for (let j = 0; j < Locations.StateCodes.length; j++) {
+        if (location.includes(Locations.StateCodes[j].toUpperCase()) || location.includes(Locations.States[j].toUpperCase())) {
+          scores[i].location = Locations.StateCodes[j];
+          scores[i].parsed = true;
+        }
+      }
+
+      // 2nd level of extraction: World
+      // if country name exists in the location text
+      // then replace the location by the country
+      for (let k = 0; k < Locations.Countries.length; k++) {
+        if (location.includes(Locations.Countries[k].toUpperCase())) {
+          scores[i].location = Locations.Countries[k];
+          scores[i].parsed = true;
+        }
       }
     }
 
     return scores;
   }
-
+  console.log(calculateScores(tweets));
   return calculateScores(tweets);
 };
