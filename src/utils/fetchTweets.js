@@ -28,7 +28,7 @@ module.exports = function FetchTweets(app, options) {
     reqOpts.headers = headers;
 
     request.get({
-      url: 'https://api.twitter.com/1.1/search/tweets.json?q=%23StanleyCup&count=100&tweet_mode=extended',
+      url: 'https://api.twitter.com/1.1/search/tweets.json?q=%23' + options.query + '&count=100&tweet_mode=extended',
       headers: reqOpts.headers
     }, function(err, res, body) {
       if (err) {

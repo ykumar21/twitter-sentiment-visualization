@@ -5,7 +5,7 @@ module.exports = function(app) {
     res.render('index');
   });
 
-  app.get('/profile', function(req, res) {
+  app.get('/map', function(req, res) {
     if ('user' in req) {
       res.render('dash.ejs');
       FetchTweets(app, {
