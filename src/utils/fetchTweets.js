@@ -3,7 +3,7 @@ import getBearerToken from './getBearerToken';
 import getScore from './getScore';
 
 
-module.exports = function FetchTweets(options) {
+module.exports = function FetchTweets(app, options) {
   const credentials = {
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
@@ -30,7 +30,7 @@ module.exports = function FetchTweets(options) {
     request.get({
       url: 'https://api.twitter.com/1.1/search/tweets.json?q=%23StanleyCup&count=100&tweet_mode=extended',
       headers: reqOpts.headers
-    }, function (err, res, body) {
+    }, function(err, res, body) {
       if (err) {
         throw err;
       } else {
@@ -47,7 +47,7 @@ module.exports = function FetchTweets(options) {
           }
         }
 
-        getScore(data);
+        getScore(app, data);
       }
 
     });

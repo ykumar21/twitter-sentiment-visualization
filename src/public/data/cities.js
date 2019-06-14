@@ -5,148 +5,196 @@ export let stateList = [{
 {
   abbreviation: 'AK',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'AZ',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'AR',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'CA',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'CO',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'CT',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'DE',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'FL',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'GA',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'HI',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'ID',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'IL',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'IN',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'IA',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'KS',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'KY',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'LA',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'ME',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'MD',
   name: 'Alabama'
-},{
+},
+{
   abbreviation: 'MA',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'MI',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'MN',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'MS',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'MO',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'MT',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'NE',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'NV',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'NH',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'NJ',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'NM',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'NY',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'NC',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'ND',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'OH',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'OK',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'OR',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'PA',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'RI',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'SC',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'SD',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'TN',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'TX',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'UT',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'VT',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'VA',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'WA',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'WV',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'WI',
   name: 'Alabama'
-},{
-  abbreviation: 'AL',
+},
+{
+  abbreviation: 'WY',
   name: 'Alabama'
 }];

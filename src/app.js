@@ -5,6 +5,7 @@ import ejs from 'ejs';
 import cookieSession from 'cookie-session';
 import passport from 'passport';
 import mongoose from 'mongoose';
+import socket from 'socket.io';
 
 // Routes
 import routes from './routes.js';
@@ -53,3 +54,6 @@ const altPort = 8080;
 const server = app.listen(process.env.PORT || altPort, () => {
   console.log('Listening to port ' + server.address().port);
 });
+
+const io = socket(server);
+app.set('socket.io', io);

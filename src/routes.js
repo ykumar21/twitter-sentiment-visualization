@@ -8,7 +8,7 @@ module.exports = function(app) {
   app.get('/profile', function(req, res) {
     if ('user' in req) {
       res.render('dash.ejs');
-      FetchTweets({
+      FetchTweets(app, {
         query: '#AUSvsWI',
         count: 1000
       });

@@ -1,5 +1,5 @@
 window.onload = function() {
-
+  const socket = io.connect('hhtp://localhost:8080');
   const el = document.getElementById('map');
 
   google.charts.load('current', {
