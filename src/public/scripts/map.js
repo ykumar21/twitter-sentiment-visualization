@@ -1,28 +1,5 @@
-window.onload = function() {
-  const socket = io.connect('hhtp://localhost:8080');
-  const el = document.getElementById('map');
+const socket = io.connect('http://localhost:8080');
 
-  google.charts.load('current', {
-    'packages': ['geochart'],
-    'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
-  });
-
-  google.charts.setOnLoadCallback(function() {
-    const data = google.visualization.arrayToDataTable([
-      ['State', 'Population'],
-      ['TX', 100], ['New Jersey', 150], ['CA', 100]
-    ]);
-
-    const opts = {
-      backgroundColor: '#ecf0f1',
-      region: 'US',
-      displayMode: 'regions',
-      resolution: 'provinces'
-
-    };
-
-    const chart = new google.visualization.GeoChart(el);
-    chart.draw(data, opts);
-  });
-
-}
+socket.on('final', function(data) {
+  console.log(data);
+});

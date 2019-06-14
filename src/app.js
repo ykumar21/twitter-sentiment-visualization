@@ -24,6 +24,19 @@ const app = express();
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 
+const altPort = 8080;
+const server = app.listen(process.env.PORT || altPort, () => {
+  console.log('Listening to port ' + server.address().port);
+});
+
+// Setup socket.io
+const io = socket(server);
+app.set('socket.io', io);
+
+io.on('connection', function(socket) {
+  console.log('connection made! ');
+});
+
 // Setup OAuth for Google login
 const passportSetup = require('./config/passportSetup');
 
@@ -49,11 +62,3 @@ app.use(passport.session());
 // set up routes
 routes(app);
 app.use('/auth', authRoutes);
-
-const altPort = 8080;
-const server = app.listen(process.env.PORT || altPort, () => {
-  console.log('Listening to port ' + server.address().port);
-});
-
-const io = socket(server);
-app.set('socket.io', io);
