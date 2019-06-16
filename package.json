@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon src/bin/dev",
+    "start": "node src/bin/dev",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "mkdir dist && babel src -s -d dist"
   },

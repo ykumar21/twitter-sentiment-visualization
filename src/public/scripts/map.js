@@ -9,7 +9,7 @@ socket.on('final', function(data) {
   for (let i = 0; i < data.length; i++) {
     // Check if location is valid or not
     if (data[i].parsed) {
-      let row = [data[i].location, data[i].score];
+      let row = [data[i].location ,data[i].score];
       dataTable.push(row);
     }
 
@@ -30,10 +30,13 @@ function DrawMap(dataTable) {
 
     const opts = {
       backgroundColor: '#ecf0f1',
+      colorAxis: {
+         colors: ['red', 'green']
+      },
       region: 'US',
       displayMode: 'regions',
       resolution: 'provinces',
-      
+
     };
 
     const chart = new google.visualization.GeoChart(el);
