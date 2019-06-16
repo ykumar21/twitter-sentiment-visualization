@@ -4,7 +4,13 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 module.exports = function(app) {
   app.get('/', function(req, res) {
-    res.render('index');
+    if ('user' in req) {
+      res.render('reg-index', {
+        username: req.user.username
+      });;
+    } else {
+      res.render('index');
+    }
   });
 
   app.get('/map', function(req, res) {
@@ -12,11 +18,15 @@ module.exports = function(app) {
   });
 
   app.post('/map', urlencodedParser, function(req, res) {
-      FetchTweets(app, {
-        query: req.body.q,
-        count: 1000
-      });
+      if('body' in req) {
+        FetchTweets(app, {
+          query: req.body.q,
+          count: 1000
+        });
 
-      res.send('success');
+        res.send('success');
+      } else {
+        res.status(404).send('Empty Request...');
+      }
   });
 };
