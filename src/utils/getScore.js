@@ -4,6 +4,9 @@ import * as Locations from '../public/data/locations';
 const sentiment = new Sentiment();
 
 module.exports = function(tweets) {
+  function getSignmoid(x) {
+    return 1/(1+Math.exp(-x));
+  }
   function checkExist(location, array) {
     let found = 0;
     for (let i = 0; i < array.length; i++) {
@@ -48,6 +51,7 @@ module.exports = function(tweets) {
         if (location.includes(Locations.StateCodes[j].toUpperCase()) || location.includes(Locations.States[j].toUpperCase())) {
           scores[i].location = Locations.StateCodes[j];
           scores[i].parsed = true;
+          scores[i].score = getSignmoid(scores[i].score);
         }
       }
 
@@ -58,6 +62,7 @@ module.exports = function(tweets) {
         if (location.includes(Locations.Countries[k].toUpperCase())) {
           scores[i].location = Locations.Countries[k];
           scores[i].parsed = true;
+          scores[i].score = getSignmoid(scores[i].score);
         }
       }
     }

@@ -1,7 +1,7 @@
 const socket = io.connect('http://localhost:8080');
-
+let status = document.getElementById('status').innerHTML;
 socket.on('final', function(data) {
-  console.log(':D');
+  status = 'Rendering Map!';
   let dataTable = []; // 2D Array
   let col = ['State', 'Score'];
 
@@ -33,10 +33,7 @@ function DrawMap(dataTable) {
       region: 'US',
       displayMode: 'regions',
       resolution: 'provinces',
-      legend: 'none',
-      colorAxis: {
-            colors: ['#444444', '#00b894']
-      }
+      
     };
 
     const chart = new google.visualization.GeoChart(el);
