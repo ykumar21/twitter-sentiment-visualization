@@ -145,10 +145,15 @@ $(document).ready(function() {
 
             })
             $('.swal2-confirm').click(function(){
-                 window.location.href = '/map';
+              let data = 'q='+query;
+              $.post('/map', data, function(e) {
+                if(e == 'success') {
+                  window.location.href = '/map';
+                }
+              });
+            });
            });
           })
-        })
         }
 
       }
