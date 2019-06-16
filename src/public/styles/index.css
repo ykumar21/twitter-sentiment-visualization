@@ -1,0 +1,124 @@
+
+* {
+margin: 0;
+padding: 0;
+}
+
+html, body {
+width: 100%;
+height: 100%;
+font-family: Montserrat;
+overflow: hidden;
+}
+
+.intro {
+position: relative;
+width: 100%;
+height: 100%;
+overflow: hidden;
+
+}
+
+
+
+.intro .overlay {
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.7);
+position: absolute;
+top: 0;
+opacity: 1;
+left: 0;
+z-index: +4;
+}
+
+.intro .text {
+font-family: Montserrat;
+font-size: 30pt;
+color: #fff;
+position: absolute;
+text-align: center;
+top: 40%;
+left: 50%;
+-webkit-transform: translate(-50%, -50%);
+-moz-transform: translate(-50%, -50%);
+opacity: 0;
+z-index: +6;
+transform: translate(-50%, -50%);
+}
+
+.intro .textbox {
+position: absolute;
+top: 54%;
+text-align: center;
+left: 50%;
+padding: 10px;
+opacity: 0;
+font-size: 20pt;
+-webkit-appearance: none;
+appearance: none;
+color: #fff;
+font-family: Montserrat;
+background: transparent;
+-webkit-transform: translate(-50%, -50%);
+-moz-transform: translate(-50%, -50%);
+width: 300px;
+border: none;
+z-index: +7;
+outline: none;
+border-bottom: 2px solid #eee;
+text-transform: capitalize;
+}
+
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(assets/img/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: transparent;
+  z-index: 999;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  font-size: 12px;
+  cursor: pointer;
+}
+.header .opts {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 72%;
+
+}
+.opt {
+  float: left;
+  margin-left: 2%;
+  padding-bottom: 6px;
+  position: relative;
+  display: block;
+  transition: all 0.5s;
+  border-bottom: 1px solid transparent;
+}
+.opt:hover {
+  border-bottom-color: rgba(255,255,255,1);
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
