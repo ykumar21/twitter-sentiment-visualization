@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/sweetalert2@7.3.2/dist/sweetalert2.all.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" charset="utf-8"></script>
   <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
   <title>Document</title>
   <script>
     window.onload = function() {
@@ -29,6 +31,8 @@ padding: 0;
 html, body {
 width: 100%;
 height: 100%;
+font-family: Montserrat;
+overflow: hidden;
 }
 
 .intro {
@@ -55,8 +59,7 @@ z-index: +4;
 font-family: Montserrat;
 font-size: 30pt;
 color: #fff;
-position: relative;
-text-align: center;
+position: absolute;
 top: 40%;
 left: 50%;
 -webkit-transform: translate(-50%, -50%);
@@ -88,6 +91,7 @@ outline: none;
 border-bottom: 2px solid #eee;
 }
 
+
 .bg {
   position: absolute;
   top: 0;
@@ -105,30 +109,61 @@ border-bottom: 2px solid #eee;
 $(document).ready(function() {
   $('.overlay').delay(2000).animate({
       'opacity': 1
-  }, 700, function(){
-      $(".text").animate({
-          'top':'38%',
-          'opacity':1
-      });
-      $(".textbox").animate({
-          'top':'52%',
-          'opacity':1
-      });
-  });
-  $(document).keydown(function(e){
-      if (e.keyCode == 13) {
-          window.location.href = "/map"
+    }, 700, function(){
+        $(".text").animate({
+            'top':'38%',
+            'opacity':1
+        });
+        $(".textbox").animate({
+            'top':'52%',
+            'opacity':1
+        });
+    });
+    $(document).keydown(function(e) {
+      if(e.keyCode == 13) {
+        let query = $('.textbox').val();
+
+        if(query.length) {
+          swal({
+          title: 'Fetching Tweets!',
+          timer: 4000,
+          onOpen: () => {
+            swal.showLoading()
+          }
+        }).then((result) => {
+          swal({
+            title: 'Generating Map!',
+            timer: 3000,
+            onOpen: () => {
+              swal.showLoading()
+            }
+          }).then((result) => {
+            swal({
+              title: 'Success...',
+              text: 'Sentiment Map Generated!',
+              type: 'success',
+
+            })
+            $('.swal2-confirm').click(function(){
+                 window.location.href = '/map';
+           });
+          })
+        })
+        }
+
       }
-  });
+    });
 });
 </script>
 <body>
-
+  <div class="header">
+    <div class="opt">Login In with Google</div>
+  </div>
   <div class = "bg"></div>
   <div class="intro">
 
             <div class="overlay"></div>
-            <div class="text">Search for any trending hashtag</div>
+            <div class="text">Seach for a trending hashtag</div>
             <input type="text" class="textbox" placeholder="Enter Hashtag"/>
   </div>
 </body>
