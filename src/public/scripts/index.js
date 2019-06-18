@@ -9,6 +9,11 @@ window.onload = function() {
 $(document).ready(function() {
   let video = document.getElementsByTagName('video')[0];
   video.currentTime = 10;
+
+  // loop video
+  if (video.currentTime = 114) {
+    video.currentTime = 10;
+  }
   $('.overlay').delay(2000).animate({
       'opacity': 1
     }, 700, function(){
