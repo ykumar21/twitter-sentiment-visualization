@@ -8,3 +8,19 @@ body {
     top: 0;
     left: 0;
   }
+
+  #status {
+    position: absolute;
+    z-index: 999;
+    top: 4%;
+    left: 3%;
+    text-transform: uppercase;
+    font-family: montserrat;
+    font-weight: 400;
+    font-size: 12px;
+  }
+
+  a {
+    text-decoration: none;
+    color: #333;
+  }
