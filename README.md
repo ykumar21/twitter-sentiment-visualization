@@ -1,10 +1,10 @@
-# twitter-sentiment-visualization
+# Shruti 
 
 :sparkles: Visualize how people from different regions react to trending hashtags on Twitter. 
 
 ## Features
 
-Current/upcoming features are as follows: 
+Current/upcoming features in Shurti are as follows: 
 
 |    Feature            |Development Status|
 |----------------|-------------------------------|
@@ -42,4 +42,4 @@ Please make sure to update tests as appropriate.
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
 
-Created with :heart: by Yashwardhann Kumar
+### Created with :heart: by [Yashwardhann Kumar](https://www.facebook.com/yashwardhann.100)
