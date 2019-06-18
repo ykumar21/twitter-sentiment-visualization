@@ -10,10 +10,12 @@ $(document).ready(function() {
   let video = document.getElementsByTagName('video')[0];
   video.currentTime = 10;
 
+  console.log(video.currentTime);
   // loop video
-  if (video.currentTime = 114) {
+  setTimeout(function() {
     video.currentTime = 10;
-  }
+    video.play();
+  }, 104000);
   $('.overlay').delay(2000).animate({
       'opacity': 1
     }, 700, function(){
