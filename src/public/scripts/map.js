@@ -1,4 +1,6 @@
-const socket = io.connect('http://localhost:8080');
+const host = window.location.host;
+console.log(host);
+const socket = io.connect(host);
 let fire = 0; // Checks if 'final' event has been fired
 function HandleEmptyRequest(target, time) {
   // Checks if the 'final' event fires after 
