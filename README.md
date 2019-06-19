@@ -31,7 +31,8 @@ npm start
 #### Production Build
 
 ```bash
-npm run production 
+npm build
+npm run production
 ```
 
 ## Contributing
