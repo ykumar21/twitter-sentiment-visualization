@@ -57,7 +57,7 @@ $(document).ready(function() {
               let data = 'q='+query;
               $.post('/map', data, function(e) {
                 if(e == 'success') {
-                  window.location.href = '/map';
+                  window.location.href = '/map?view=local';
                 }
               });
             });

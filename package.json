@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/bin/dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "mkdir dist && babel src -s -d dist"
+    "build": "mkdir dist && babel src -s -d dist",
+    "production": "node dist/app.js"
   },
   "author": "Yashwardhann <stoner.spruce@gmail.com>",
   "license": "ISC",

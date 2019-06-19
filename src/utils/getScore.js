@@ -49,8 +49,9 @@ module.exports = function(tweets) {
       // location text then replace the location by the state
       for (let j = 0; j < Locations.StateCodes.length; j++) {
         if (location.includes(Locations.StateCodes[j].toUpperCase()) || location.includes(Locations.States[j].toUpperCase())) {
-          scores[i].location = Locations.StateCodes[j];
+          scores[i].location = Locations.States[j];
           scores[i].parsed = true;
+          scores[i].local = true;
           scores[i].score = getSignmoid(scores[i].score);
         }
       }
@@ -62,6 +63,7 @@ module.exports = function(tweets) {
         if (location.includes(Locations.Countries[k].toUpperCase())) {
           scores[i].location = Locations.Countries[k];
           scores[i].parsed = true;
+          scores[i].local = false;
           scores[i].score = getSignmoid(scores[i].score);
         }
       }
