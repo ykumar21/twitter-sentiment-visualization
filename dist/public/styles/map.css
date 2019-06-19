@@ -1,0 +1,49 @@
+body {
+  overflow: hidden;
+}
+  #map {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    }
+  #map2 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+  }
+
+  #status {
+    position: absolute;
+    z-index: 999;
+    top: 4%;
+    left: 3%;
+    text-transform: uppercase;
+    font-family: montserrat;
+    font-weight: 400;
+    font-size: 12px;
+   
+  }
+  #switch {
+    position: absolute;
+    z-index: 999;
+    top: 4%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    font-family: montserrat;
+    font-weight: 400;
+    font-size: 12px;
+    color: #0984e3;
+    cursor: pointer;
+  }
+  a {
+    text-decoration: none;
+    color: #333;
+  }
