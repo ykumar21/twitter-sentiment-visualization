@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../src/bin/dev.js"],"names":["require","config"],"mappings":";;AAAAA,QAAQ,QAAR,EAAkBC,MAAlB;AACAD,QAAQ,aAAR","file":"dev.js","sourcesContent":["require('dotenv').config();\r\nrequire('./../app.js');\r\n"]}
