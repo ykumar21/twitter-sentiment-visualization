@@ -9,7 +9,7 @@ Current/upcoming features in Shurti are as follows:
 |    Feature            |Development Status|
 |----------------|-------------------------------|
 |United States Visualization|:heavy_check_mark:            |
-|Global Visualization         |:x:            |
+|Global Visualization         |:heavy_check_mark:             |
 |Real Time Visualization (Trackers)|:x:|
 
 
