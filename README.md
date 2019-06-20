@@ -13,14 +13,6 @@ Current/upcoming features in Shurti are as follows:
 |Real Time Visualization (Trackers)|:x:|
 
 
-## Installation
-
-Use the package manager [npm](https://www.npmjs.com/get-npm) to install Shruti.
-
-```bash
-npm install
-```
-
 ## Usage 
 
 #### Development Build
