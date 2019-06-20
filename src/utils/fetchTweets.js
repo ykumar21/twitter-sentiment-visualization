@@ -30,7 +30,7 @@ module.exports = function FetchTweets(app, options) {
     request.get({
       url: 'https://api.twitter.com/1.1/search/tweets.json?q=%23' + options.query + '&count=100&tweet_mode=extended',
       headers: reqOpts.headers
-    }, function(err, res, body) {
+    }, function(err, body) {
       if (err) {
         throw err;
       } else {
@@ -48,7 +48,9 @@ module.exports = function FetchTweets(app, options) {
         }
 
         // Generate scores for tweets
-        io.emit('final', getScore(data));
+        io.emit('final', getScore(data), function() {
+          console.log('Data sent to client-side!');
+        });
       }
 
     });
