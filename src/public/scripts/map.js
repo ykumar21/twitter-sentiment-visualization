@@ -44,6 +44,7 @@ function HandleEmptyRequest(target, time) {
 HandleEmptyRequest('final', 30);
 
 socket.on('final', function(data) {
+  console.log(data);
   fire = 1;
   renderGlobal(data);
   document.getElementById('status').innerHTML = 'Back to home';

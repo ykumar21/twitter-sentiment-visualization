@@ -8,6 +8,7 @@ body {
     top: 0;
     left: 0;
     z-index: 2;
+    transition: all 0.5s;
     }
   #map2 {
     height: 100%;
@@ -16,6 +17,7 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
+    transition: all 0.5s;
 
   }
 
