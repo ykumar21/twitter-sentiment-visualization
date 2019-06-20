@@ -8,7 +8,7 @@ https://limitless-harbor-88913.herokuapp.com
 
 ## Features
 
-Current/upcoming features in Shurti are as follows: 
+Current and upcoming features are as follows: 
 
 |    Feature            |Development Status|
 |----------------|-------------------------------|
