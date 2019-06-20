@@ -2,6 +2,10 @@
 
 :sparkles: Visualize how people from different regions react to trending hashtags on Twitter. 
 
+## Demo
+
+https://limitless-harbor-88913.herokuapp.com
+
 ## Features
 
 Current/upcoming features in Shurti are as follows: 
