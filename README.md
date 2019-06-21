@@ -1,10 +1,14 @@
-# Shruti 
+# twitter-sentiment-visualization
 
 :sparkles: Visualize how people from different regions react to trending hashtags on Twitter. 
 
+## Demo
+
+https://limitless-harbor-88913.herokuapp.com
+
 ## Features
 
-Current/upcoming features in Shurti are as follows: 
+Current and upcoming features are as follows: 
 
 |    Feature            |Development Status|
 |----------------|-------------------------------|
@@ -12,14 +16,6 @@ Current/upcoming features in Shurti are as follows:
 |Global Visualization         |:heavy_check_mark:             |
 |Real Time Visualization (Trackers)|:x:|
 
-
-## Installation
-
-Use the package manager [npm](https://www.npmjs.com/get-npm) to install Shruti.
-
-```bash
-npm install
-```
 
 ## Usage 
 
