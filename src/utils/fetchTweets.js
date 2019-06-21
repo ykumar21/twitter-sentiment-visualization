@@ -49,7 +49,6 @@ module.exports = function FetchTweets(app, options) {
         }
 
         // Generate scores for tweets
-        io.emit('heya');
         io.emit('final', getScore(data));
         console.log('Data sent to client! ');
       }
