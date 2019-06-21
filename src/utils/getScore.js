@@ -61,7 +61,7 @@ module.exports = function(tweets) {
           scores[i].location = Locations.Countries[k];
           scores[i].parsed = true;
           scores[i].local = false;
-          scores[i].score = getSignmoid(scores[i].score);
+          scores[i].score = scores[i].score;
         }
       }
     }
