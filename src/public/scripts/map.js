@@ -43,6 +43,10 @@ function HandleEmptyRequest(target, time) {
 // Check for empty request after 30s 
 HandleEmptyRequest('final', 30);
 
+socket.on('heya', () => {
+  alert('heya!');
+});
+
 socket.on('final', function(data) {
   console.log(data);
   fire = 1;

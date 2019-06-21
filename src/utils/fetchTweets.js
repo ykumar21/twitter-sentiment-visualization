@@ -4,6 +4,7 @@ import getScore from './getScore';
 
 module.exports = function FetchTweets(app, options) {
   const io = app.get('socket.io');
+
   const credentials = {
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
@@ -48,6 +49,7 @@ module.exports = function FetchTweets(app, options) {
         }
 
         // Generate scores for tweets
+        io.emit('heya');
         io.emit('final', getScore(data));
         console.log('Data sent to client! ');
       }
