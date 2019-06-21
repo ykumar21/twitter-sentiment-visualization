@@ -26,7 +26,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 const altPort = 8080;
-const server = app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT || altPort, () => {
   console.log('Listening to port ' + server.address().port);
 });
 

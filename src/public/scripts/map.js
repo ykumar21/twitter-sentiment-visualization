@@ -1,5 +1,5 @@
 const host = window.location.host;
-const socket = io.connect('https://' + host);
+const socket = io.connect(host);
 let clicks = 0;
 let changeView = document.getElementById('switch');
 
