@@ -19,7 +19,7 @@ Current and upcoming features are as follows:
 
 ## Usage 
 
-#####Development Build
+##### Development Build
 ```bash
 npm start
 ```
