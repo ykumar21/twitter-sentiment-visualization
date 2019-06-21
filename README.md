@@ -2,8 +2,8 @@
 
 :sparkles: Visualize how people from different regions react to trending hashtags on Twitter. 
 
-## Demo
-
+## Demo (Currently Down)
+ 
 https://limitless-harbor-88913.herokuapp.com
 
 ## Features
@@ -19,17 +19,24 @@ Current and upcoming features are as follows:
 
 ## Usage 
 
-#### Development Build
-
+##### Development Build
 ```bash
-npm start 
+npm start
 ```
-#### Production Build
+
+##### Production Build
 
 ```bash
 npm build
 npm run production
 ```
+
+##### Set Custom Port (Optional)
+```bash
+npm start
+```
+
+
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
