@@ -25,8 +25,17 @@ app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
-const altPort = 8080;
-const server = app.listen(process.env.PORT, () => {
+let altPort;
+
+if(typeof process.argv[2] === 'undefined') {
+  // Set the value of alternative port to 8080 if 
+  // no arguments are passed during launch
+  altPort = 8080; 
+} else {
+  altPort = process.argv[2];
+}
+
+const server = app.listen(process.env.PORT || altPort, () => {
   console.log('Listening to port ' + server.address().port);
 });
 
