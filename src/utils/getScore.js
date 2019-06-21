@@ -4,9 +4,6 @@ import * as Locations from '../public/data/locations';
 const sentiment = new Sentiment();
 
 module.exports = function(tweets) {
-  function getSignmoid(x) {
-    return 1/(1+Math.exp(-x));
-  }
   function checkExist(location, array) {
     let found = 0;
     for (let i = 0; i < array.length; i++) {
@@ -52,7 +49,7 @@ module.exports = function(tweets) {
           scores[i].location = Locations.States[j];
           scores[i].parsed = true;
           scores[i].local = true;
-          scores[i].score = getSignmoid(scores[i].score);
+          scores[i].score = scores[i].score;
         }
       }
 
