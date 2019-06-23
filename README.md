@@ -44,7 +44,7 @@ npm run production
 
 ##### Set Custom Port (Optional)
 ```bash
-npm start
+npm start 8080
 ```
 
 
