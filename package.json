@@ -27,7 +27,7 @@
     "passport-google-oauth20": "^2.0.0",
     "request": "^2.88.0",
     "sentiment": "^5.0.1",
-    "socket.io": "^2.2.0"
+    "socket.io": "^3.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
